@@ -2,7 +2,7 @@
   "arg_robotics_tools": {
     "Overview": "/",
     "utils": "utils.html",
-    "arg_tools": "video2picture.html",
+    "arg_tools": "get_ip.html",
     "robot_model": "robot_model.html"
   }
 }

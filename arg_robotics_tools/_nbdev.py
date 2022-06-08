@@ -6,12 +6,16 @@ index = {"gdown_unzip": "02_video2picture.ipynb",
          "pose_dis": "00_utils.ipynb",
          "waypoint": "00_utils.ipynb",
          "camera_projection": "01_camera_projection.ipynb",
-         "robot_model_loader": "03_robot_model.ipynb"}
+         "robot_model_loader": "03_robot_model.ipynb",
+         "who_am_I": "04_get_ip.ipynb",
+         "get_key": "04_get_ip.ipynb",
+         "get_xbee_address": "04_get_ip.ipynb"}
 
 modules = ["utils.py",
            "camera_projection.py",
            "video2picture.py",
-           "robot_model.py"]
+           "robot_model.py",
+           "get_ip.py"]
 
 doc_url = "https://ARG-NCTU.github.io/arg_robotics_tools/"
 
