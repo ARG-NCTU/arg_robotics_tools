@@ -10,7 +10,8 @@ index = {"gdown_unzip": "02_video2picture.ipynb",
          "robot_model_loader": "03_robot_model.ipynb",
          "who_am_I": "04_get_ip.ipynb",
          "get_key": "04_get_ip.ipynb",
-         "get_xbee_address": "04_get_ip.ipynb"}
+         "get_xbee_address": "04_get_ip.ipynb",
+         "get_xbee_address_boat": "04_get_ip.ipynb"}
 
 modules = ["utils.py",
            "camera_projection.py",
