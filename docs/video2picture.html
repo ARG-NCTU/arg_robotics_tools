@@ -110,6 +110,38 @@ nb_path: "02_video2picture.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cd</span> <span class="n">data</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[Errno 2] No such file or directory: &#39;data&#39;
+/home/arg/arg_robotics_tools/data
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">id</span> <span class="o">=</span> <span class="s1">&#39;12Z8WrveD5sriwKjepYxqXjE1jg9KRhLz&#39;</span>
 <span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;wamv_5_16&quot;</span>
 <span class="n">gdown_unzip</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
@@ -129,7 +161,7 @@ nb_path: "02_video2picture.ipynb"
 <pre>Downloading...
 From: https://drive.google.com/u/1/uc?id=12Z8WrveD5sriwKjepYxqXjE1jg9KRhLz
 To: /home/arg/arg_robotics_tools/data/wamv_5_16.zip
-100%|████████████████████████████████████████████████| 138M/138M [00:01&lt;00:00, 100MB/s]
+100%|█████████████████████████████████████████████████████████| 138M/138M [00:01&lt;00:00, 102MB/s]
 </pre>
 </div>
 </div>
@@ -156,7 +188,7 @@ To: /home/arg/arg_robotics_tools/data/wamv_5_16.zip
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mkdir</span> <span class="s2">&quot;data/&quot;</span><span class="n">output</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mkdir</span> <span class="n">output</span>
 </pre></div>
 
     </div>
@@ -196,6 +228,17 @@ To: /home/arg/arg_robotics_tools/data/wamv_5_16.zip
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
  Finished.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>
+(python3:35): GStreamer-CRITICAL **: 16:05:07.567: gst_element_make_from_uri: assertion &#39;gst_uri_is_valid (uri)&#39; failed
+[ WARN:0] global ../modules/videoio/src/cap_gstreamer.cpp (713) open OpenCV | GStreamer warning: Error opening bin: no element &#34;data&#34;
+[ WARN:0] global ../modules/videoio/src/cap_gstreamer.cpp (480) isPipelinePlaying OpenCV | GStreamer warning: GStreamer: pipeline have not been created
 </pre>
 </div>
 </div>
