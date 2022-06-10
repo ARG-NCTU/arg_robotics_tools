@@ -12,7 +12,10 @@ index = {"gdown_unzip": "02_video2picture.ipynb",
          "get_key": "04_get_ip.ipynb",
          "get_xbee_address": "04_get_ip.ipynb",
          "get_xbee_address_boat": "04_get_ip.ipynb",
-         "find_duckiepond_devices_yaml": "04_get_ip.ipynb"}
+         "find_duckiepond_devices_yaml": "04_get_ip.ipynb",
+         "dp_load_config": "04_get_ip.ipynb",
+         "dp_get_devices": "04_get_ip.ipynb",
+         "ssh_ping_nano": "04_get_ip.ipynb"}
 
 modules = ["utils.py",
            "camera_projection.py",
