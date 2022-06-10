@@ -13,7 +13,7 @@ entries:
       title: utils
       url: utils.html
     - output: web,pdf
-      title: arg_tools
+      title: camera_projection
       url: camera_projection.html
     - output: web,pdf
       title: video2picture
