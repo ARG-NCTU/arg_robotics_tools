@@ -15,7 +15,15 @@ index = {"gdown_unzip": "02_video2picture.ipynb",
          "find_duckiepond_devices_yaml": "04_get_ip.ipynb",
          "dp_load_config": "04_get_ip.ipynb",
          "dp_get_devices": "04_get_ip.ipynb",
-         "ssh_ping_nano": "04_get_ip.ipynb"}
+         "ssh_ping_nano": "04_get_ip.ipynb",
+         "ssh_ping_rpi": "04_get_ip.ipynb",
+         "test_ssh_intranet": "04_get_ip.ipynb",
+         "ssh_connection": "04_get_ip.ipynb",
+         "test_ssh": "04_get_ip.ipynb",
+         "ip_connection": "04_get_ip.ipynb",
+         "test_ping": "04_get_ip.ipynb",
+         "ssh_rostopic": "04_get_ip.ipynb",
+         "test_rostopic": "04_get_ip.ipynb"}
 
 modules = ["utils.py",
            "camera_projection.py",
