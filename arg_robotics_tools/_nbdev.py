@@ -25,6 +25,7 @@ index = {"gdown_unzip": "02_video2picture.ipynb",
          "ssh_rostopic": "04_get_ip.ipynb",
          "test_rostopic": "04_get_ip.ipynb",
          "random_generate": "05_random_map.ipynb",
+         "sub_random_generate": "05_random_map.ipynb",
          "draw_line": "05_random_map.ipynb"}
 
 modules = ["utils.py",
