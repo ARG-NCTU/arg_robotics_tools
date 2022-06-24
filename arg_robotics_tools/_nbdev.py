@@ -23,13 +23,16 @@ index = {"gdown_unzip": "02_video2picture.ipynb",
          "ip_connection": "04_get_ip.ipynb",
          "test_ping": "04_get_ip.ipynb",
          "ssh_rostopic": "04_get_ip.ipynb",
-         "test_rostopic": "04_get_ip.ipynb"}
+         "test_rostopic": "04_get_ip.ipynb",
+         "random_generate": "05_random_map.ipynb",
+         "draw_line": "05_random_map.ipynb"}
 
 modules = ["utils.py",
            "camera_projection.py",
            "video2picture.py",
            "robot_model.py",
-           "get_ip.py"]
+           "get_ip.py",
+           "random_map.py"]
 
 doc_url = "https://ARG-NCTU.github.io/arg_robotics_tools/"
 
