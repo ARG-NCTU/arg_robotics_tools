@@ -86,7 +86,8 @@ RUN pip3 install \
     jupyter_http_over_ws \
     flask-socketio \
     urdfpy \
-    twine
+    twine \
+    roslibpy
 
 RUN jupyter serverextension enable --py jupyter_http_over_ws
 
@@ -99,6 +100,7 @@ RUN git clone https://github.com/ARG-NCTU/vim-python-ide.git && \
 
 RUN chown -R ${USER}:${USER} ${HOME}/
 RUN echo "kl ALL=(ALL)  ALL" > /etc/sudoers
+
 
 COPY ./colab_jupyter.sh /home/arg/
 USER ${USER}
