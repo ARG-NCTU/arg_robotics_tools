@@ -62,7 +62,6 @@ docker run \
     -v "/var/run/docker.sock:/var/run/docker.sock" \
     -v "/home/$USER/arg_robotics_tools:/home/arg/arg_robotics_tools" \
     -w "/home/arg/arg_robotics_tools" \
-    --user "root:root" \
     --name argtool \
     --network host \
     --privileged \
@@ -70,3 +69,5 @@ docker run \
     $DOCKER_OPTS \
     argnctu/arg_tools:cpu \
     $BASH_OPTION
+    
+    #--user "root:root" \
