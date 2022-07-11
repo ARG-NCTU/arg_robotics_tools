@@ -6,8 +6,8 @@ title: camera_projection
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "A toolset for ."
-description: "A toolset for ."
+summary: "This notebook is a class for camera projections, common used function like solvePNP or draw or read camera info are all in this class, just create an object than you can use, this notebook below have two part: function part and example part."
+description: "This notebook is a class for camera projections, common used function like solvePNP or draw or read camera info are all in this class, just create an object than you can use, this notebook below have two part: function part and example part."
 nb_path: "01_camera_projection.ipynb"
 ---
 <!--
@@ -29,6 +29,12 @@ nb_path: "01_camera_projection.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Function-define-part">Function define part<a class="anchor-link" href="#Function-define-part"> </a></h2>
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -69,7 +75,8 @@ nb_path: "01_camera_projection.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Testing-Example">Testing Example<a class="anchor-link" href="#Testing-Example"> </a></h3>
+<h2 id="Testing-example">Testing example<a class="anchor-link" href="#Testing-example"> </a></h2><p>we will move to 'data' directory to start all examples, this directory have been added to '.gitignoe' , so is convenient to test in local and light in cloud</p>
+
 </div>
 </div>
 </div>
@@ -104,6 +111,55 @@ nb_path: "01_camera_projection.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="prepare-data">prepare data<a class="anchor-link" href="#prepare-data"> </a></h3>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">id</span> <span class="o">=</span> <span class="s1">&#39;1DN5tiV_WII_aJM3DLijPnq5OLtI0HAq1&#39;</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;ViperX_apriltags&quot;</span>
+<span class="n">gdown_unzip</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>Downloading...
+From: https://drive.google.com/u/1/uc?id=1DN5tiV_WII_aJM3DLijPnq5OLtI0HAq1
+To: /home/arg/arg_robotics_tools/data/ViperX_apriltags.zip
+100%|███████████████████████████████████████████████████████| 48.1M/48.1M [00:00&lt;00:00, 103MB/s]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="create-an--object">create an  object<a class="anchor-link" href="#create-an--object"> </a></h3><p>all function in this notebook are use as class members, so create an object first</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -121,6 +177,14 @@ nb_path: "01_camera_projection.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="function-calling">function calling<a class="anchor-link" href="#function-calling"> </a></h3><p>we can simply call read_camera_info, read_images(id) to get the img</p>
+<p>apriltag_detection() to get apriltag detect and solvePNP  use self.detection_results[0].corners as input img point</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">

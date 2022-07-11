@@ -7,6 +7,7 @@ all: arg_robotics_tools docs
 arg_robotics_tools: $(SRC)
 	nbdev_build_lib
 	touch arg_robotics_tools
+	nbdev_clean_nbs
 
 sync:
 	nbdev_update_lib
