@@ -27,6 +27,9 @@ entries:
     - output: web,pdf
       title: random_map
       url: random_map.html
+    - output: web,pdf
+      title: uwb
+      url: uwb.html
     output: web
     title: arg_robotics_tools
   output: web

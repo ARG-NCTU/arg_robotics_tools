@@ -6,6 +6,7 @@
     "video2picture": "video2picture.html",
     "robot_model": "robot_model.html",
     "get_ip": "get_ip.html",
-    "random_map": "random_map.html"
+    "random_map": "random_map.html",
+    "uwb": "uwb.html"
   }
 }

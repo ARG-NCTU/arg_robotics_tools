@@ -2,9 +2,9 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"gdown_unzip": "02_video2picture.ipynb",
-         "pose_dis": "00_utils.ipynb",
-         "waypoint": "00_utils.ipynb",
+index = {"gdown_unzip": "06_uwb.ipynb",
+         "pose_dis": "06_uwb.ipynb",
+         "waypoint": "06_uwb.ipynb",
          "camera_projection": "01_camera_projection.ipynb",
          "get_images_from_video": "02_video2picture.ipynb",
          "robot_model_loader": "03_robot_model.ipynb",
@@ -36,7 +36,8 @@ modules = ["utils.py",
            "video2picture.py",
            "robot_model.py",
            "get_ip.py",
-           "random_map.py"]
+           "random_map.py",
+           "uwb.py"]
 
 doc_url = "https://ARG-NCTU.github.io/arg_robotics_tools/"
 
