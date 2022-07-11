@@ -12,7 +12,7 @@ import math
 from zipfile import ZipFile
 
 def gdown_unzip(id, filename):
-    """download a zipfile and unzip it under data directory
+    """download a zipfile and unzip it
     """
     dataset_url = 'https://drive.google.com/u/1/uc?id=' + id
     dataset_name = filename

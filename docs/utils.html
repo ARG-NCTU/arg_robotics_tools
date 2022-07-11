@@ -6,8 +6,8 @@ title: utils
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "A toolset for rosbag created by arg lab."
-description: "A toolset for rosbag created by arg lab."
+summary: "This notebook is a toolset for arg utils, common used function like gdown or unzip are all wrote here, this notebook below have two part: function part and example part."
+description: "This notebook is a toolset for arg utils, common used function like gdown or unzip are all wrote here, this notebook below have two part: function part and example part."
 nb_path: "00_utils.ipynb"
 ---
 <!--
@@ -29,6 +29,12 @@ nb_path: "00_utils.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Function-define-part">Function define part<a class="anchor-link" href="#Function-define-part"> </a></h2>
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -42,7 +48,7 @@ nb_path: "00_utils.ipynb"
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="gdown_unzip" class="doc_header"><code>gdown_unzip</code><a href="https://github.com/ARG-NCTU/arg_robotics_tools/tree/master/arg_robotics_tools/utils.py#L14" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>gdown_unzip</code>(<strong><code>id</code></strong>, <strong><code>filename</code></strong>)</p>
 </blockquote>
-<p>download a zipfile and unzip it under data directory</p>
+<p>download a zipfile and unzip it</p>
 
 </div>
 
@@ -115,7 +121,7 @@ Return : a list of way points</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Testing-example">Testing example<a class="anchor-link" href="#Testing-example"> </a></h2><p>id is the google drive id, filename is your filename in google drive (should be a .zip file )</p>
+<h2 id="Testing-example">Testing example<a class="anchor-link" href="#Testing-example"> </a></h2><p>we will move to 'data' directory to start all examples, this directory have been added to '.gitignoe' , so is convenient to test in local and light in cloud</p>
 
 </div>
 </div>
@@ -140,8 +146,7 @@ Return : a list of way points</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[Errno 2] No such file or directory: &#39;data&#39;
-/home/arg/arg_robotics_tools/data
+<pre>/home/arg/arg_robotics_tools/data
 </pre>
 </div>
 </div>
@@ -152,6 +157,13 @@ Return : a list of way points</p>
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="gdown_unzip(id,-filename)">gdown_unzip(id, filename)<a class="anchor-link" href="#gdown_unzip(id,-filename)"> </a></h3><p>id is the google drive id, filename is your filename in google drive (should be a .zip file )</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -185,6 +197,14 @@ README.txt  camera_info.yaml  depth  rgb  rviz.png  tag_bundles.yaml
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="waypoint(current_pose,-Target_pose)">waypoint(current_pose, Target_pose)<a class="anchor-link" href="#waypoint(current_pose,-Target_pose)"> </a></h3><p>Input : current pose, target pose : list [x_pos, y_pos, z_pos, x_ori, y_ori, z_ori, w_ori]</p>
+<p>Return : a list of way points</p>
+
+</div>
+</div>
+</div>
 </div>
 
 
