@@ -31,7 +31,7 @@ conda_release:
 pypi: dist
 	twine upload --skip-existing --repository pypi dist/*
 
-dist: clean
+dist: arg_robotics_tools clean
 	python3 setup.py sdist bdist_wheel
 
 clean:
