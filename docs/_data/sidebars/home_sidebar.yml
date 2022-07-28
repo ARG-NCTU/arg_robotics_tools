@@ -30,6 +30,18 @@ entries:
     - output: web,pdf
       title: uwb
       url: uwb.html
+    - output: web,pdf
+      title: traveler salesman problem (tsp)
+      url: tsp.html
+    - output: web,pdf
+      title: Websocket with rosbridge to get anchor distance data
+      url: websocket_rosbridge_for_anchor.html
+    - output: web,pdf
+      title: Websocket with rosbridge
+      url: websocket_rosbridge.html
+    - output: web,pdf
+      title: Title
+      url: websocket_with_multithread.html
     output: web
     title: arg_robotics_tools
   output: web

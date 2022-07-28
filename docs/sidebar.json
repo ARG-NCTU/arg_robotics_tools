@@ -7,6 +7,10 @@
     "robot_model": "robot_model.html",
     "get_ip": "get_ip.html",
     "random_map": "random_map.html",
-    "uwb": "uwb.html"
+    "uwb": "uwb.html",
+    "traveler salesman problem (tsp)": "tsp.html",
+    "Websocket with rosbridge to get anchor distance data": "websocket_rosbridge_for_anchor.html",
+    "Websocket with rosbridge": "websocket_rosbridge.html",
+    "Title": "websocket_with_multithread.html"
   }
 }

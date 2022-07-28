@@ -29,7 +29,13 @@ index = {"gdown_unzip": "06_uwb.ipynb",
          "test_rostopic": "04_get_ip.ipynb",
          "random_generate": "05_random_map.ipynb",
          "sub_random_generate": "05_random_map.ipynb",
-         "draw_line": "05_random_map.ipynb"}
+         "draw_line": "05_random_map.ipynb",
+         "dist": "07_tsp.ipynb",
+         "distanceGenerate": "07_tsp.ipynb",
+         "sortWaypoint": "07_tsp.ipynb",
+         "solve_tsp_nearest_neighbor": "07_tsp.ipynb",
+         "solve_tsp_held_karp": "07_tsp.ipynb",
+         "ros_socket": "08_websocket_rosbridge.ipynb"}
 
 modules = ["utils.py",
            "camera_projection.py",
@@ -37,7 +43,9 @@ modules = ["utils.py",
            "robot_model.py",
            "get_ip.py",
            "random_map.py",
-           "uwb.py"]
+           "uwb.py",
+           "tsp.py",
+           "websocket_rosbridge.py"]
 
 doc_url = "https://ARG-NCTU.github.io/arg_robotics_tools/"
 
