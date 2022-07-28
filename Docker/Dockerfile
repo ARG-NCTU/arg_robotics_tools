@@ -87,7 +87,8 @@ RUN pip3 install \
     flask-socketio \
     urdfpy \
     twine \
-    roslibpy
+    roslibpy \
+    python_tsp
 
 RUN jupyter serverextension enable --py jupyter_http_over_ws
 
