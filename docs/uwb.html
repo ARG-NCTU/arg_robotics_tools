@@ -6,8 +6,8 @@ title: uwb
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "This notebook is a toolset for arg uwb, common used function like XXXX or XXXX are all wrote here, this notebook below have two part: function part and example part."
-description: "This notebook is a toolset for arg uwb, common used function like XXXX or XXXX are all wrote here, this notebook below have two part: function part and example part."
+
+
 nb_path: "06_uwb.ipynb"
 ---
 <!--
@@ -39,90 +39,121 @@ nb_path: "06_uwb.ipynb"
     
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="gdown_unzip" class="doc_header"><code>gdown_unzip</code><a href="https://github.com/ARG-NCTU/arg_robotics_tools/tree/master/arg_robotics_tools/uwb.py#L14" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>gdown_unzip</code>(<strong><code>id</code></strong>, <strong><code>filename</code></strong>)</p>
-</blockquote>
-<p>download a zipfile and unzip it</p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="pose_dis" class="doc_header"><code>pose_dis</code><a href="https://github.com/ARG-NCTU/arg_robotics_tools/tree/master/arg_robotics_tools/uwb.py#L28" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>pose_dis</code>(<strong><code>pose_1</code></strong>, <strong><code>pose_2</code></strong>)</p>
-</blockquote>
-<p>Compute distance between pose_1 and pose_2</p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">UWB</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">port</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="n">port</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_network_id</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pozyx_handler</span> <span class="o">=</span> <span class="kc">None</span>        
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pose</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_env_config</span> <span class="o">=</span> <span class="kc">None</span>
+        
+        <span class="c1">#TODO: Make height parameterized</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_height</span> <span class="o">=</span> <span class="mi">500</span>
+        
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">network_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_network_id</span>
     
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="waypoint" class="doc_header"><code>waypoint</code><a href="https://github.com/ARG-NCTU/arg_robotics_tools/tree/master/arg_robotics_tools/uwb.py#L39" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>waypoint</code>(<strong><code>current_pose</code></strong>, <strong><code>Target_pose</code></strong>)</p>
-</blockquote>
-<p>Generate a list of way points from current pose to target pose</p>
-<p>Input : current pose, target pose : list [x_pos, y_pos, z_pos, x_ori, y_ori, z_ori, w_ori]
-Return : a list of way points</p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
+    <span class="nd">@network_id</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">network_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_network_id</span> <span class="o">=</span> <span class="n">NetworkID</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_network_id</span> <span class="o">=</span> <span class="n">NetworkID</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">port</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_port</span>
     
-<div class="cell border-box-sizing code_cell rendered">
+    <span class="nd">@port</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">port</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">port</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_port</span> <span class="o">=</span> <span class="n">port</span>
+        
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">pose</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pose</span>
+    
+    <span class="nd">@pose</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">pose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_pose</span> <span class="o">=</span> <span class="n">Coordinates</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_pose</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_pose</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_pose</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">env_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_env_config</span>
+    
+    <span class="k">def</span> <span class="nf">load_env_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config_file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load UWB anchors&#39; environment config.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            config_file_path (str): The environment config file path.</span>
+<span class="sd">            </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: True for success, False for failure.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">config_file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">config_file</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_env_config</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span>
+            <span class="k">except</span> <span class="n">yaml</span><span class="o">.</span><span class="n">YAMLError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
+                <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    
+    <span class="k">def</span> <span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">port</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1">#TODO:</span>
+            <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">pozyx_handler</span> <span class="o">=</span> <span class="n">PozyxSerial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">)</span>
+            <span class="k">except</span> <span class="n">PozyxException</span><span class="p">:</span>
+                <span class="c1">#TODO:</span>
+                <span class="k">pass</span>
+    
+    <span class="k">def</span> <span class="nf">write_device</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">ANCHOR_FLAG</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pozyx_handler</span><span class="o">.</span><span class="n">clearDevices</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">anchor_name</span><span class="p">,</span> <span class="n">config</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">env_config</span><span class="p">:</span>
+            <span class="n">coordinate</span> <span class="o">=</span> <span class="n">Coordinates</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;z&#39;</span><span class="p">])</span>
+            <span class="n">device_coordinate</span> <span class="o">=</span> <span class="n">DeviceCoordinates</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span> <span class="n">ANCHOR_FLAG</span><span class="p">,</span> <span class="n">coordinate</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pozyx_handler</span><span class="o">.</span><span class="n">addDevice</span><span class="p">(</span><span class="n">device_coordinate</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pozyx_handler</span><span class="o">.</span><span class="n">setSelectionOfAnchorsAutomatic</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">env_config</span><span class="p">))</span>
+    
+    <span class="c1">#TODO: Seperate localize of differ dimensions and height</span>
+    <span class="k">def</span> <span class="nf">localize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dest_id</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pozyx_handler</span><span class="o">.</span><span class="n">doPosition</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pose</span><span class="p">,</span> <span class="n">PozyxConstants</span><span class="o">.</span><span class="n">DIMENSION_3D</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span><span class="p">,</span> <span class="n">PozyxConstants</span><span class="o">.</span><span class="n">POSITIONING_ALGORITHM_UWB_ONLY</span><span class="p">,</span> <span class="p">)</span>
+        
+    <span class="k">def</span> <span class="nf">range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dest_id</span><span class="p">):</span>
+        <span class="n">ranges</span> <span class="o">=</span> <span class="n">DeviceRange</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pozyx_handler</span><span class="o">.</span><span class="n">doRanging</span><span class="p">(</span><span class="n">dest_id</span><span class="p">,</span> <span class="n">ranges</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ranges</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
 
 </div>
     {% endraw %}
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Testing-example">Testing example<a class="anchor-link" href="#Testing-example"> </a></h2><p>we will move to 'data' directory to start all examples, this directory have been added to '.gitignoe' , so is convenient to test in local and light in cloud</p>
-
+<h2 id="Testing-example">Testing example<a class="anchor-link" href="#Testing-example"> </a></h2>
 </div>
 </div>
 </div>
@@ -133,7 +164,16 @@ Return : a list of way points</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cd</span> <span class="n">data</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">uwb</span> <span class="o">=</span> <span class="n">UWB</span><span class="p">()</span>
+<span class="c1">#TODO: Add scan port method</span>
+<span class="n">ports</span> <span class="o">=</span> <span class="n">pypozyx</span><span class="o">.</span><span class="n">get_pozyx_ports</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ports</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">uwb</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="n">ports</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">uwb</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">my_id</span> <span class="o">=</span> <span class="n">pypozyx</span><span class="o">.</span><span class="n">NetworkID</span><span class="p">()</span>
+<span class="n">uwb</span><span class="o">.</span><span class="n">pozyx_handler</span><span class="o">.</span><span class="n">getNetworkId</span><span class="p">(</span><span class="n">my_id</span><span class="p">)</span>
+<span class="n">uwb</span><span class="o">.</span><span class="n">load_env_config</span><span class="p">(</span><span class="s1">&#39;data/duckiepond-devices/ee6f_uwb.yaml&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_id</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -146,7 +186,8 @@ Return : a list of way points</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>/home/arg/arg_robotics_tools/data
+<pre>/dev/ttyACM1
+0x6A27
 </pre>
 </div>
 </div>
@@ -157,13 +198,6 @@ Return : a list of way points</p>
 </div>
     {% endraw %}
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="gdown_unzip(id,-filename)">gdown_unzip(id, filename)<a class="anchor-link" href="#gdown_unzip(id,-filename)"> </a></h3><p>id is the google drive id, filename is your filename in google drive (should be a .zip file )</p>
-
-</div>
-</div>
-</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -171,40 +205,19 @@ Return : a list of way points</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ls</span> <span class="o">&amp;&amp;</span> <span class="n">ls</span> <span class="n">subt_apriltags</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">uwb</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mh">0x6a27</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-blue-intense-fg ansi-bold">ViperX_apriltags</span>/     <span class="ansi-blue-intense-fg ansi-bold">husky_ur5</span>/     <span class="ansi-blue-intense-fg ansi-bold">subt_apriltags</span>/
-<span class="ansi-red-intense-fg ansi-bold">ViperX_apriltags.zip</span>  <span class="ansi-red-intense-fg ansi-bold">husky_ur5.zip</span>  <span class="ansi-red-intense-fg ansi-bold">subt_apriltags.zip</span>
-README.txt  camera_info.yaml  depth  rgb  rviz.png  tag_bundles.yaml
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="waypoint(current_pose,-Target_pose)">waypoint(current_pose, Target_pose)<a class="anchor-link" href="#waypoint(current_pose,-Target_pose)"> </a></h3><p>Input : current pose, target pose : list [x_pos, y_pos, z_pos, x_ori, y_ori, z_ori, w_ori]</p>
-<p>Return : a list of way points</p>
-
-</div>
-</div>
-</div>
 </div>
 
 
