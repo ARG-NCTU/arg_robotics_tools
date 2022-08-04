@@ -88,7 +88,10 @@ RUN pip3 install \
     urdfpy \
     twine \
     roslibpy \
-    python_tsp
+    python_tsp \ 
+    pypozyx \
+    pyyaml \
+    arg_robotics_tools
 
 RUN jupyter serverextension enable --py jupyter_http_over_ws
 
@@ -100,8 +103,8 @@ RUN git clone https://github.com/ARG-NCTU/vim-python-ide.git && \
 ##################################### setting #####################################
 
 RUN chown -R ${USER}:${USER} ${HOME}/
-RUN echo "kl ALL=(ALL)  ALL" > /etc/sudoers
-
+RUN echo "${USER} ALL=(ALL)  ALL" > /etc/sudoers
+RUN usermod -a -G dialout ${USER}
 
 COPY ./colab_jupyter.sh /home/arg/
 USER ${USER}
