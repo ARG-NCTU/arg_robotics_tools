@@ -62,6 +62,7 @@ docker run \
     -v "/var/run/docker.sock:/var/run/docker.sock" \
     -v "/home/$USER/arg_robotics_tools:/home/arg/arg_robotics_tools" \
     -w "/home/arg/arg_robotics_tools" \
+    --user root \
     --name argtool \
     --network host \
     --privileged \
