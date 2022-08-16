@@ -44,8 +44,8 @@ def xbee_encode(data_via_xbee, data_type):
     return pack  
 
 def xbee_decode(xbee_message):
-    print(xbee_message)
-
+    get_register = bytearray()
+    #print(xbee_message)
     if not xbee_message[0:1] == b'\xAB' : # Header wrong
         print('get xbee_message with wrong Header')
         return
@@ -71,7 +71,7 @@ def xbee_decode(xbee_message):
 
     if xbee_message[1:2] == b'\x00':
         get_msg = pickle.loads(get_register[:-1])
-        print(get_msg)
+        #print(get_msg)
         return(get_msg)
     
     
