@@ -1,0 +1,30 @@
+website:
+  sidebar:
+    contents:
+      - index.ipynb
+      - 00_utils.ipynb
+      - 01_camera_projection.ipynb
+      - 02_video2picture.ipynb
+      - 03_robot_model.ipynb
+      - 04_get_ip.ipynb
+      - 05_random_map.ipynb
+      - 06_uwb.ipynb
+      - 07_tsp.ipynb
+      - 07_websocket_rosbridge_for_anchor.ipynb
+      - 08_websocket_rosbridge.ipynb
+      - 09_anchor_logging.ipynb
+      - 10_xbee_coding.ipynb
+      - section: docs
+        contents:
+          - docs/index.html
+          - docs/camera_projection.html
+          - docs/get_ip.html
+          - docs/random_map.html
+          - docs/robot_model.html
+          - docs/tsp.html
+          - docs/utils.html
+          - docs/uwb.html
+          - docs/video2picture.html
+          - docs/websocket_rosbridge.html
+          - docs/websocket_rosbridge_for_anchor.html
+          - docs/websocket_with_multithread.html

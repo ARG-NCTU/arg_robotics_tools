@@ -5,9 +5,9 @@ SRC = $(wildcard ./*.ipynb)
 all: arg_robotics_tools docs
 
 arg_robotics_tools: $(SRC)
-	nbdev_build_lib
+	nbdev_export
 	touch arg_robotics_tools
-	nbdev_clean_nbs
+	nbdev_clean
 
 sync:
 	nbdev_update_lib
@@ -16,7 +16,7 @@ docs_serve: docs
 	cd docs && bundle exec jekyll serve
 
 docs: $(SRC)
-	nbdev_build_docs
+	nbdev_docs
 	touch docs
 
 test:
