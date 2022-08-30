@@ -3,6 +3,56 @@
 # %% auto 0
 __all__ = ['UWB']
 
+# %% ../06_uwb.ipynb 4
+import yaml
+import pypozyx
+from pypozyx import PozyxSerial
+from pypozyx import NetworkID
+from pypozyx import Coordinates, DeviceCoordinates
+from pypozyx import DeviceRange
+from pypozyx import PozyxConstants
+from pypozyx.core import PozyxException
+
+# %% ../06_uwb.ipynb 5
+class UWB():
+    def __init__(self, port = None):
+        self.port = port
+        self._network_id = None
+        self._pozyx_handler = None        
+        self._pose = None
+        self._env_config = None
+        
+        #TODO: Make height parameterized
+        self._height = 500
+        
+    @property
+    def network_id(self):
+        return self._network_id
+    
+    @property
+    def network_id_str(self) -> str:
+        """A getter method of network id string
+
+        Convert network id to string to show in readable.
+
+        Returns:
+            str: A string of id number in hexadecimal of The Pozyx
+        """
+        return str(self._network_id)
+
+    @network_id.setter
+    def network_id(self, value: int = None) -> None:
+        """A setter method of port string
+
+        Args:
+            value (int, optional): A integer id number in hexadecimal or decimal of The Pozyx. Defaults to None.
+        """
+        if value is None:
+            self._network_id = NetworkID()
+        else:
+            self._network_id = NetworkID(value)
+
+
 # %% ../06_uwb.ipynb 6
 class UWB(UWB):
     # pose
