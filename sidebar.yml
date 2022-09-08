@@ -10,7 +10,9 @@ website:
       - 05_random_map.ipynb
       - 06_uwb.ipynb
       - 07_tsp.ipynb
-      - 07_websocket_rosbridge_for_anchor.ipynb
       - 08_websocket_rosbridge.ipynb
       - 09_anchor_logging.ipynb
       - 10_xbee_coding.ipynb
+      - section: RSA2022
+        contents:
+          - RSA2022/01_websocket.ipynb
