@@ -13,7 +13,7 @@ expected = cfg_keys + "lib_name user branch license status min_python audience l
 for o in expected: assert o in cfg, "missing expected setting: {}".format(o)
 setup_cfg = {o:cfg[o] for o in cfg_keys}
 
-setup_cfg['version'] = '0.0.14'
+setup_cfg['version'] = '0.0.15'
 
 if len(sys.argv)>1 and sys.argv[1]=='version':
     print(setup_cfg['version'])
