@@ -62,7 +62,7 @@ class ros_socket():
             topic_type(type:)
             message_data(type:topic_type)
         '''
-        talker = roslibpy.Topic(client, topic_name, message_data)
+        talker = roslibpy.Topic(client, topic_name, topic_type)
         talker.publish(roslibpy.Message({'': message_data}))
     
     

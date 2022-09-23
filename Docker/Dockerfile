@@ -91,6 +91,7 @@ RUN pip3 install \
     python_tsp \ 
     pypozyx \
     pyyaml \
+    paho-mqtt \
     arg_robotics_tools
 
 RUN jupyter serverextension enable --py jupyter_http_over_ws
