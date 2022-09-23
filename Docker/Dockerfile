@@ -92,6 +92,7 @@ RUN pip3 install \
     pypozyx \
     pyyaml \
     paho-mqtt \
+    pynput \
     arg_robotics_tools
 
 RUN jupyter serverextension enable --py jupyter_http_over_ws
