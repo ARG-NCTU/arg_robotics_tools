@@ -5,6 +5,8 @@ __all__ = ['UWB']
 
 # %% ../06_uwb.ipynb 4
 import yaml
+import serial
+from serial.tools.list_ports import comports
 import pypozyx
 from pypozyx import PozyxSerial
 from pypozyx import NetworkID
@@ -12,12 +14,13 @@ from pypozyx import Coordinates, DeviceCoordinates
 from pypozyx import DeviceRange
 from pypozyx import PozyxConstants
 from pypozyx.core import PozyxException
+from typing import List
 
 # %% ../06_uwb.ipynb 5
 class UWB():
     def __init__(self, port = None):
         self.port = port
-        self._network_id = None
+        self.network_id = None
         self._pozyx_handler = None        
         self._pose = None
         self._env_config = None
@@ -165,8 +168,20 @@ class UWB(UWB):
     def scan_port(self) -> None:
         """Scan all port connecting to host. Store port device path in port list.
         """
-        self._port_list = pypozyx.get_pozyx_ports()
-
+        self._port_list = []
+        for port in comports():
+            try:
+                if "Pozyx Labs" in port.manufacturer:
+                    self._port_list.append(port.device)
+                    break
+            except TypeError:
+                pass
+            try:
+                if "Pozyx" in port.product:
+                    self._port_list.append(port.device)
+                    break
+            except TypeError:
+                pass
 
 # %% ../06_uwb.ipynb 13
 class UWB(UWB):
