@@ -1,0 +1,9 @@
+project:
+  output-dir: docs
+
+website:
+  title: "arg_robotics_tools"
+  site-url: "https://ARG-NCTU.github.io/arg_robotics_tools/"
+  description: "A toolset for navigation (no ros) created by arg lab"
+  repo-branch: master
+  repo-url: "https://github.com/ARG-NCTU/arg_robotics_tools/tree/master/"
